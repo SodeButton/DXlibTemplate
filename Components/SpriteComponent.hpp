@@ -5,7 +5,7 @@
 #ifndef DXLIBTEMPLATE_SPRITECOMPONENT_HPP
 #define DXLIBTEMPLATE_SPRITECOMPONENT_HPP
 
-#include "../Components/Component.hpp"
+#include "Component.hpp"
 #include "../dxlib/DxLib.h"
 
 class SpriteComponent : public Component {
