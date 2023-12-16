@@ -12,6 +12,7 @@ public:
     explicit TestScene(class Game* game);
     ~TestScene() override;
 
+    void Draw() override;
     void Start() override;
     void Update(float deltaTime) override;
     void ProcessInput(const char* state) override;

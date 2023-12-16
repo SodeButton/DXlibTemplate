@@ -11,6 +11,8 @@ Scene::Scene(class Game *game)
 
 Scene::~Scene() = default;
 
+void Scene::Draw() {}
+
 void Scene::Start() {}
 
 void Scene::Update(float deltaTime) {}

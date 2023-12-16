@@ -36,7 +36,7 @@ bool Game::InitDxLib() {
     ChangeWindowMode(TRUE);
     SetMainWindowText("DxLib Template");
     SetGraphMode((int)ScreenWidth, (int)ScreenHeight, 32);
-    SetWaitVSyncFlag(FALSE);
+    SetWaitVSyncFlag(TRUE);
 
     bool success = DxLib_Init() != -1;
     if (!success) return false;
@@ -135,6 +135,8 @@ void Game::GenerateOutput() {
     for (auto sprite : mSprites) {
         sprite->Draw();
     }
+
+    mScene->Draw();
 
     ScreenFlip();
 }

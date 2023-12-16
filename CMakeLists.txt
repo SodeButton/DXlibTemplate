@@ -21,7 +21,10 @@ add_executable(DXLibTemplate main.cpp
         Scenes/Scene.cpp
         Scenes/Scene.hpp
         Scenes/TestScene.cpp
-        Scenes/TestScene.hpp)
+        Scenes/TestScene.hpp
+        Components/CircleColliderComponent.cpp
+        Components/CircleColliderComponent.hpp
+)
 
 target_link_libraries(
         DXLibTemplate

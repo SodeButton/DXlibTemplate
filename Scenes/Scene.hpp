@@ -11,6 +11,7 @@ class Scene {
 public:
     explicit Scene(class Game* game);
     virtual ~Scene();
+    virtual void Draw();
     virtual void Start();
     virtual void Update(float deltaTime);
     virtual void ProcessInput(const char* state);
