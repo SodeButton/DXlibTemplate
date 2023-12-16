@@ -1,13 +1,12 @@
+#include "Game.hpp"
 #include "dxlib/DxLib.h"
 
-int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
-{
-    ChangeWindowMode(TRUE);
-    if( DxLib_Init() == -1) {
-        return -1 ;
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+    Game game;
+    if (game.Initialize()) {
+        game.RunLoop();
     }
-    DrawBox(0, 0, 200, 100, (int) GetColor(255, 0, 0), TRUE);
-    WaitKey();
-    DxLib_End();
+
+    game.Shutdown();
     return 0;
 }
