@@ -52,6 +52,10 @@ float Vector2::LengthSq() const {
     return x * x + y * y;
 }
 
+float Vector2::Max() const {
+    return std::max(x, y);
+}
+
 const Vector2 Vector2::Zero = Vector2(0, 0);
 const Vector2 Vector2::One = Vector2(1, 1);
 

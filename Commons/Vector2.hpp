@@ -25,6 +25,7 @@ public:
 
     float Length() const;
     float LengthSq() const;
+    float Max() const;
 
     static const Vector2 Zero;
     static const Vector2 One;
