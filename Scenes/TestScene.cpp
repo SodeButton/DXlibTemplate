@@ -32,7 +32,7 @@ void TestScene::Update(float deltaTime) {
 
 void TestScene::ProcessInput(const char* state) {
     if (state[KEY_INPUT_SPACE]) {
-        mGame->SetGameOver(true);
+        printf("hello\n");
     }
 }
 

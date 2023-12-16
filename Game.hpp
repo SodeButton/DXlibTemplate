@@ -38,7 +38,11 @@ private:
     std::vector<class GameObject*> mPendingGameObjects;
     std::vector<class SpriteComponent*> mSprites;
 
-    u_int mTicksCount;
+    LONGLONG mTicksCount;
+    LONGLONG mFpsCheckTime{};
+    int mFps{};
+    int mFpsCount{};
+
     bool mIsRunning;
     bool mUpdatingGameObjects;
     bool mGameOver;

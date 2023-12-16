@@ -22,7 +22,10 @@ bool Game::Initialize() {
         return false;
     }
 
-    mTicksCount = GetNowCount();
+    mTicksCount = GetNowHiPerformanceCount();
+    mFpsCheckTime = GetNowHiPerformanceCount();
+    mFps = 0;
+
 
     InitScene();
 
@@ -33,6 +36,7 @@ bool Game::InitDxLib() {
     ChangeWindowMode(TRUE);
     SetMainWindowText("DxLib Template");
     SetGraphMode((int)ScreenWidth, (int)ScreenHeight, 32);
+    SetWaitVSyncFlag(FALSE);
 
     bool success = DxLib_Init() != -1;
     if (!success) return false;
@@ -66,11 +70,22 @@ void Game::StartScene() {
 void Game::UpdateScene() {
     ProcessInput();
 
-    float deltaTime = (float)(GetNowCount() - mTicksCount) / 1000.0f;
+    float deltaTime = (float)(GetNowHiPerformanceCount() - mTicksCount) / 1000000.0f ;
     if (deltaTime > 0.05f) {
         deltaTime = 0.05f;
     }
-    mTicksCount = GetNowCount();
+
+    mFpsCount++;
+    if (mTicksCount - mFpsCheckTime >= 1000000) {
+        mFps = mFpsCount;
+        mFpsCount = 0;
+        mFpsCheckTime = mTicksCount;
+    }
+
+    mTicksCount = GetNowHiPerformanceCount();
+    clsDx();
+    printfDx("DeltaTime:%f\n", deltaTime);
+    printfDx("FPS:%d", mFps);
 
     mUpdatingGameObjects = true;
     for (auto gameObject : mGameObjects) {
