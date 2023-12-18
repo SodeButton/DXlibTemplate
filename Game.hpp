@@ -26,6 +26,8 @@ public:
     constexpr static const float ScreenWidth = 1280.0f;
     constexpr static const float ScreenHeight = 720.0f;
 
+    constexpr static const float Gravity = 9.8f;
+
 private:
     static bool InitDxLib();
     void InitScene();
