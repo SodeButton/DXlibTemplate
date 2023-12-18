@@ -24,6 +24,10 @@ add_executable(DXLibTemplate main.cpp
         Scenes/TestScene.hpp
         Components/CircleColliderComponent.cpp
         Components/CircleColliderComponent.hpp
+        GameObjects/Player.cpp
+        GameObjects/Player.hpp
+        Components/RigidbodyComponent.cpp
+        Components/RigidbodyComponent.hpp
 )
 
 target_link_libraries(
