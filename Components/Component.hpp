@@ -19,6 +19,8 @@ protected:
 
 public:
     [[nodiscard]] int GetUpdateOrder() const { return mUpdateOrder; }
+    [[nodiscard]] class GameObject* GetGameObject() const { return mGameObject; }
+
 };
 
 
