@@ -6,6 +6,7 @@
 #define DXLIBTEMPLATE_GAMEOBJECT_HPP
 
 #include <vector>
+#include <string>
 #include "../Commons/Vector2.hpp"
 
 class GameObject {
@@ -27,6 +28,8 @@ public:
     void RemoveComponent(class Component* component);
 
 private:
+    std::string mName;
+    std::string mTag;
     State mState;
     Vector2 mPosition;
     Vector2 mScale;
@@ -44,6 +47,8 @@ public:
     [[maybe_unused]] [[nodiscard]] float GetRotation() const { return mRotation; }
     [[maybe_unused]] void SetRotation(const float rotation) { mRotation = rotation; }
     [[maybe_unused]] [[nodiscard]] class Game* GetGame() const { return mGame; }
+    [[maybe_unused]] void SetName(const std::string& name) { mName = name; }
+    [[maybe_unused]] [[nodiscard]] std::string GetName() const { return mName; }
 };
 
 
